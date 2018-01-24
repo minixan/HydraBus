@@ -1,8 +1,10 @@
-HydraBus Schematic and Board CadSoft Eagle 6.x
+HydraBus Schematic and Board
 ========
 
-This directory contains HydraBus Schematic and Board for CadSoft Eagle 6.x (free version works too)
+The HydraBus is an open source multi-tool hardware for anyone interested in Learning/Developping/Debugging/Hacking/Penetration Testing for basic or advanced embedded hardware.
 
-HydraBus: Hardware license [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (for commercial license contact info@hydrabus.com)
+The MCU is one of the fastest Cortex M4F on the market and is more than 40X faster than an Arduino (STM32F415, 32bits@168MHz=210DMIPS vs Arduino Uno, 8bits@16MHz=5.2DMIPS).
 
-For more details on the hardware see also http://hydrabus.com/?page_id=30
+HydraBus can be also used as Test Bench for hardware validation/test with help of embedded python script or native C/C++ firmware and it is a perfect tool for hardware pentesting.
+
+HydraBus is evolutive with the help of “Shield” hardware extensions (first Shield is HydraNFC).
