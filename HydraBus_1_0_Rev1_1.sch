@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3327,7 +3327,6 @@ source: http://www.mlelectronic.com/shrouded-headers/shrouded-headers-100.asp</d
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="R4" library="OPL" deviceset="R*" device="-0603" value="220"/>
-<part name="R7" library="OPL" deviceset="R*" device="-0603" value="2.2K"/>
 <part name="JP1" library="pinhead" deviceset="PINHD-1X1" device="" value="5V"/>
 <part name="JP2" library="pinhead" deviceset="PINHD-1X1" device="" value="GND"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
@@ -3380,6 +3379,8 @@ source: http://www.mlelectronic.com/shrouded-headers/shrouded-headers-100.asp</d
 <part name="C11" library="OPL" deviceset="C*" device="-0603" value="2.2uF"/>
 <part name="C14" library="OPL" deviceset="C*" device="-0603" value="4.7uF"/>
 <part name="J5" library="hydrabus" deviceset="CON_HEADER_1X06" device="-PTH"/>
+<part name="R7" library="OPL" deviceset="R*" device="-0603" value="10K"/>
+<part name="GND22" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3427,7 +3428,7 @@ source: http://www.mlelectronic.com/shrouded-headers/shrouded-headers-100.asp</d
 <wire x1="325.12" y1="-10.16" x2="0" y2="-10.16" width="0.1524" layer="97"/>
 <wire x1="0" y1="-10.16" x2="0" y2="-2.54" width="0.1524" layer="97"/>
 <wire x1="325.12" y1="-10.16" x2="325.12" y2="-2.54" width="0.1524" layer="97"/>
-<text x="2.54" y="-7.62" size="1.778" layer="97">HydraBus (C) B.VERNOUX v1.0 Rev1_1 July 2014 http://hydrabus.com</text>
+<text x="2.54" y="-7.62" size="1.778" layer="97">HydraBus (C) B.VERNOUX v1.0 Rev1_2 Jan 2015 http://hydrabus.com</text>
 <text x="2.54" y="220.98" size="1.778" layer="97">User LED &amp; User Button</text>
 <text x="171.196" y="32.258" size="1.27" layer="97">CD/DAT3/CS</text>
 <text x="171.196" y="29.972" size="1.27" layer="97">CMD/DI</text>
@@ -11405,6 +11406,10 @@ USB Shield to GND.
 Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.pdf</text>
 <wire x1="274.32" y1="223.52" x2="274.32" y2="162.56" width="0.1524" layer="97"/>
 <wire x1="276.86" y1="223.52" x2="276.86" y2="162.56" width="0.1524" layer="97"/>
+<text x="3.302" y="175.768" size="1.27" layer="97">BOOT USB DFU:
+1) Press UBTN button then Press RESET button
+2) Keep pressing UBTN then Release RESET
+3) Wait 1s then Release UBTN</text>
 </plain>
 <instances>
 <instance part="C1" gate="C" x="52.07" y="67.564" smashed="yes">
@@ -11524,10 +11529,6 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <attribute name="NAME" x="38.1" y="66.04" size="1.27" layer="95" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="38.608" y="64.262" size="1.27" layer="96" ratio="10" rot="R180"/>
 </instance>
-<instance part="R7" gate="R" x="218.44" y="142.24" smashed="yes" rot="R180">
-<attribute name="NAME" x="219.71" y="144.78" size="1.27" layer="95" ratio="10" rot="R180"/>
-<attribute name="VALUE" x="220.98" y="140.97" size="1.27" layer="96" ratio="10" rot="R180"/>
-</instance>
 <instance part="JP1" gate="G$1" x="208.28" y="208.28"/>
 <instance part="JP2" gate="G$1" x="198.12" y="208.28"/>
 <instance part="GND8" gate="1" x="190.5" y="190.5" rot="MR0"/>
@@ -11593,7 +11594,7 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <instance part="GND6" gate="1" x="118.872" y="28.956"/>
 <instance part="UBTN" gate="K" x="86.106" y="173.736" smashed="yes">
 <attribute name="NAME" x="84.074" y="177.038" size="1.27" layer="95" ratio="10"/>
-<attribute name="VALUE" x="72.644" y="168.91" size="1.27" layer="96" ratio="10"/>
+<attribute name="VALUE" x="82.804" y="168.91" size="1.27" layer="96" ratio="10"/>
 </instance>
 <instance part="JMP_ULED" gate="G$1" x="52.324" y="217.932"/>
 <instance part="JMP_UBTN" gate="G$1" x="52.07" y="183.134"/>
@@ -11640,6 +11641,11 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <attribute name="VALUE" x="184.785" y="131.445" size="1.27" layer="96" ratio="10"/>
 </instance>
 <instance part="J5" gate="J" x="73.66" y="147.32"/>
+<instance part="R7" gate="R" x="236.22" y="36.83" smashed="yes" rot="R270">
+<attribute name="NAME" x="233.68" y="38.1" size="1.27" layer="95" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="237.49" y="39.37" size="1.27" layer="96" ratio="10" rot="R270"/>
+</instance>
+<instance part="GND22" gate="1" x="236.22" y="27.94"/>
 </instances>
 <busses>
 </busses>
@@ -11885,10 +11891,7 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="210.82" y1="119.38" x2="210.82" y2="142.24" width="0.1524" layer="91"/>
 <label x="210.82" y="121.92" size="1.778" layer="95" rot="R90"/>
-<pinref part="R7" gate="R" pin="2"/>
 <wire x1="210.82" y1="142.24" x2="205.74" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="214.63" y1="142.24" x2="210.82" y2="142.24" width="0.1524" layer="91"/>
-<junction x="210.82" y="142.24"/>
 </segment>
 <segment>
 <pinref part="GND14" gate="1" pin="GND"/>
@@ -11990,6 +11993,11 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <pinref part="J4" gate="J" pin="G3"/>
 <wire x1="187.96" y1="44.45" x2="187.96" y2="52.324" width="0.1524" layer="91"/>
 <junction x="187.96" y="52.324"/>
+</segment>
+<segment>
+<pinref part="R7" gate="R" pin="2"/>
+<pinref part="GND22" gate="1" pin="GND"/>
+<wire x1="236.22" y1="33.02" x2="236.22" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="USB1_D-" class="0">
@@ -12296,8 +12304,9 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <net name="PB2" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="PB2"/>
-<wire x1="236.22" y1="50.8" x2="236.22" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="50.8" x2="236.22" y2="40.64" width="0.1524" layer="91"/>
 <label x="236.22" y="43.18" size="1.778" layer="95" rot="R90"/>
+<pinref part="R7" gate="R" pin="1"/>
 </segment>
 <segment>
 <pinref part="J1" gate="J" pin="5"/>
@@ -12458,7 +12467,7 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <pinref part="JMP1" gate="-2" pin="1"/>
 <wire x1="50.546" y1="175.006" x2="50.546" y2="172.466" width="0.1524" layer="91"/>
 <wire x1="50.546" y1="172.466" x2="42.926" y2="172.466" width="0.1524" layer="91"/>
-<label x="42.926" y="172.466" size="1.778" layer="95" rot="R180"/>
+<label x="42.926" y="175.006" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="PC3" class="0">
@@ -12628,17 +12637,24 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <net name="BOOT0" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="BOOT0"/>
-<wire x1="218.44" y1="119.38" x2="218.44" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="119.38" x2="218.44" y2="132.08" width="0.1524" layer="91"/>
 <label x="218.44" y="121.92" size="1.778" layer="95" rot="R90"/>
-<pinref part="R7" gate="R" pin="1"/>
-<wire x1="222.25" y1="142.24" x2="223.52" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="223.52" y1="142.24" x2="223.52" y2="134.62" width="0.1524" layer="91"/>
-<wire x1="223.52" y1="134.62" x2="218.44" y2="134.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="J2" gate="J" pin="4"/>
 <wire x1="292.1" y1="22.86" x2="297.18" y2="22.86" width="0.1524" layer="91"/>
 <label x="304.8" y="22.86" size="1.778" layer="95" rot="R180"/>
+</segment>
+<segment>
+<wire x1="58.166" y1="168.402" x2="42.672" y2="168.402" width="0.1524" layer="91"/>
+<label x="42.672" y="167.894" size="1.778" layer="95" rot="R180"/>
+<pinref part="R12" gate="R" pin="2"/>
+<pinref part="JMP1" gate="-2" pin="2"/>
+<wire x1="53.086" y1="172.466" x2="53.086" y2="175.006" width="0.1524" layer="91"/>
+<wire x1="53.086" y1="172.466" x2="58.166" y2="172.466" width="0.1524" layer="91"/>
+<wire x1="58.166" y1="172.466" x2="59.944" y2="172.466" width="0.1524" layer="91"/>
+<wire x1="58.166" y1="168.402" x2="58.166" y2="172.466" width="0.1524" layer="91"/>
+<junction x="58.166" y="172.466"/>
 </segment>
 </net>
 <net name="PB7" class="0">
@@ -12871,17 +12887,6 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <pinref part="U1" gate="A" pin="I/O_2"/>
 </segment>
 </net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="R9" gate="R" pin="1"/>
-<wire x1="75.946" y1="176.276" x2="75.946" y2="172.466" width="0.1524" layer="91"/>
-<wire x1="75.946" y1="172.466" x2="79.756" y2="172.466" width="0.1524" layer="91"/>
-<pinref part="UBTN" gate="K" pin="1"/>
-<pinref part="R12" gate="R" pin="1"/>
-<wire x1="67.564" y1="172.466" x2="75.946" y2="172.466" width="0.1524" layer="91"/>
-<junction x="75.946" y="172.466"/>
-</segment>
-</net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="JMP1" gate="-1" pin="2"/>
@@ -12896,14 +12901,6 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <wire x1="69.85" y1="207.264" x2="99.06" y2="207.264" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="207.264" x2="99.06" y2="204.724" width="0.1524" layer="91"/>
 <pinref part="ULED" gate="LED" pin="+"/>
-</segment>
-</net>
-<net name="N$9" class="0">
-<segment>
-<pinref part="JMP1" gate="-2" pin="2"/>
-<wire x1="53.086" y1="172.466" x2="53.086" y2="175.006" width="0.1524" layer="91"/>
-<pinref part="R12" gate="R" pin="2"/>
-<wire x1="53.086" y1="172.466" x2="59.944" y2="172.466" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -12922,6 +12919,18 @@ Like defined in http://www.ftdichip.com/Support/Documents/AppNotes/AN232B-06_11.
 <wire x1="133.096" y1="17.272" x2="131.826" y2="17.272" width="0.1524" layer="91"/>
 <pinref part="USB1" gate="USB" pin="GND@2"/>
 <wire x1="131.826" y1="19.812" x2="133.096" y2="19.812" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="UBTN" gate="K" pin="1"/>
+<pinref part="R9" gate="R" pin="1"/>
+<wire x1="75.946" y1="176.276" x2="75.946" y2="172.466" width="0.1524" layer="91"/>
+<wire x1="75.946" y1="172.466" x2="79.756" y2="172.466" width="0.1524" layer="91"/>
+<junction x="75.946" y="172.466"/>
+<junction x="75.946" y="172.466"/>
+<pinref part="R12" gate="R" pin="1"/>
+<wire x1="67.564" y1="172.466" x2="75.946" y2="172.466" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
